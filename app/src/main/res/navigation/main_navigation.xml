@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/nextMeetingsFragment">
+
+    <fragment
+        android:id="@+id/nextMeetingsFragment"
+        android:name="com.practica.ismael.pr10_fct_irp.ui.nextmeetings.NextMeetingsFragment"
+        android:label="Next Meetings"
+        tools:layout="@layout/fragment_nextmeetings" >
+        <action
+            android:id="@+id/desNextMeetingsToMeetingsForm"
+            app:destination="@id/meetingsFormFragment" />
+        <action
+            android:id="@+id/desNextMeetingsToSettings"
+            app:destination="@id/mnuSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentsFragment"
+        android:name="com.practica.ismael.pr10_fct_irp.ui.students.listStudent.StudentsFragment"
+        android:label="Students"
+        tools:layout="@layout/fragment_students">
+        <action
+            android:id="@+id/desStudentsToStudentsForm"
+            app:destination="@id/studentsFormFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/desStudentsToSettings"
+            app:destination="@id/mnuSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/companiesFragment"
+        android:name="com.practica.ismael.pr10_fct_irp.ui.companies.listCompany.CompaniesFragment"
+        android:label="Companies"
+        tools:layout="@layout/fragment_companies">
+        <action
+            android:id="@+id/desCompaniesToCompaniesForm"
+            app:destination="@id/companiesFormFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/desCompaniesToSettings"
+            app:destination="@id/mnuSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/meetingsFragment"
+        android:name="com.practica.ismael.pr10_fct_irp.ui.meetings.listMeeting.MeetingsFragment"
+        android:label="Meetings"
+        tools:layout="@layout/fragment_meetings" >
+        <action
+            android:id="@+id/desMeetingsToMeetingsForm"
+            app:destination="@id/meetingsFormFragment" />
+        <action
+            android:id="@+id/desMeetingsToSettings"
+            app:destination="@id/mnuSettings" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentsFormFragment"
+        android:name="com.practica.ismael.pr10_fct_irp.ui.students.studentForm.StudentsFormFragment"
+        android:label="Student Info">
+        <argument
+            android:name="idStudent"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/desStudentsFormToStudentsCompanySelection"
+            app:destination="@id/studentsCompanySelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/companiesFormFragment"
+        android:name="com.practica.ismael.pr10_fct_irp.ui.companies.companyForm.CompaniesFormFragment"
+        android:label="Company Info"
+        tools:layout="@layout/fragment_companyform">
+        <argument
+            android:name="idCompany"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentsCompanySelectionFragment"
+        android:name="com.practica.ismael.pr10_fct_irp.ui.students.studentCompanySelection.StudentsCompanyFragment"
+        android:label="Select Company"
+        tools:layout="@layout/fragment_list_selection_companies" />
+    <fragment
+        android:id="@+id/meetingsFormFragment"
+        android:name="com.practica.ismael.pr10_fct_irp.ui.meetings.meetingForm.MeetingsFormFragment"
+        android:label="Meeting Info" >
+        <argument
+            android:name="idMeeting"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <argument
+            android:name="idStudent"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+    <fragment
+        android:id="@+id/mnuSettings"
+        android:name="com.practica.ismael.pr10_fct_irp.ui.activity.SettingsFragment"
+        android:label="Settings" >
+        <action
+            android:id="@+id/SettingsToDeveloper"
+            app:destination="@id/developerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/developerFragment"
+        android:name="com.practica.ismael.pr10_fct_irp.ui.activity.DeveloperFragment"
+        android:label="Contact"
+        tools:layout="@layout/developer_layout" />
+
+
+</navigation>

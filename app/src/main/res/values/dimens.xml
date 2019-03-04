@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">15dp</dimen>
+    <dimen name="list_minHeight">88dp</dimen>
+    <dimen name="list_paddingLeft">10dp</dimen>
+    <dimen name="imgLogo_padding">10dp</dimen>
+    <dimen name="list_paddingRight">16dp</dimen>
+    <dimen name="main_margin">5dp</dimen>
+    <dimen name="main_margin_meeting">15dp</dimen>
+    <dimen name="margin_especial_meeting">27dp</dimen>
+    <dimen name="formStudent_textSize">15sp</dimen>
+    <dimen name="main_margin_logo">6dp</dimen>
+    <dimen name="main_navHeader_height">200dp</dimen>
+    <dimen name="drawer_padding_top">7dp</dimen>
+    <dimen name="lblNoMeetingdsYet_textSize">20sp</dimen>
+    <dimen name="empty_drawable_padding">16dp</dimen>
+</resources>

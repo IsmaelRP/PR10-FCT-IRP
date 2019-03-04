@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/item_border"
+    android:clickable="true"
+    android:focusable="true"
+    android:minHeight="@dimen/list_minHeight"
+    android:paddingBottom="7dp">
+
+    <TextView
+        android:id="@+id/lblNameStudentMeetingList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/list_paddingLeft"
+        android:paddingTop="@dimen/list_paddingRight"
+        android:paddingEnd="@dimen/list_paddingRight"
+        android:textColor="@color/black"
+        android:textSize="@dimen/formStudent_textSize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/lblNameCompanyMeetingList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name Student" />
+
+    <TextView
+        android:id="@+id/lblNameCompanyMeetingList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblNameStudentMeetingList"
+        android:paddingStart="@dimen/list_paddingLeft"
+        android:paddingTop="@dimen/list_paddingRight"
+        android:paddingEnd="@dimen/list_paddingRight"
+        android:textColor="@color/black"
+        android:textSize="@dimen/formStudent_textSize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblNameStudentMeetingList"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name Company" />
+
+    <TextView
+        android:id="@+id/lblDateMeetingList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblNameCompanyMeetingList"
+        android:paddingStart="@dimen/list_paddingLeft"
+        android:paddingTop="@dimen/list_paddingRight"
+        android:paddingEnd="@dimen/list_paddingRight"
+        android:textColor="@color/black"
+        android:textSize="@dimen/formStudent_textSize"
+        app:layout_constraintEnd_toStartOf="@+id/lblTimeStartMeetingList"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblNameStudentMeetingList"
+        app:layout_constraintHorizontal_weight="2"
+        tools:text="27/02/2019" />
+
+    <TextView
+        android:id="@+id/lblTimeStartMeetingList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblDateMeetingList"
+        android:paddingStart="@dimen/list_paddingLeft"
+        android:paddingTop="@dimen/list_paddingRight"
+        android:paddingEnd="@dimen/list_paddingRight"
+        android:textColor="@color/black"
+        android:textSize="@dimen/formStudent_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lblTimeEndMeetingList"
+        app:layout_constraintStart_toEndOf="@+id/lblDateMeetingList"
+        app:layout_constraintTop_toBottomOf="@+id/lblNameCompanyMeetingList"
+        app:layout_constraintHorizontal_weight="1"
+        tools:text="11:40" />
+
+    <TextView
+        android:id="@+id/lblTimeEndMeetingList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblDateMeetingList"
+        android:paddingStart="@dimen/list_paddingLeft"
+        android:paddingTop="@dimen/list_paddingRight"
+        android:paddingEnd="@dimen/list_paddingRight"
+        android:textColor="@color/black"
+        android:textSize="@dimen/formStudent_textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblTimeStartMeetingList"
+        app:layout_constraintTop_toBottomOf="@+id/lblNameCompanyMeetingList"
+        app:layout_constraintHorizontal_weight="1"
+        tools:text="12:40" />
+
+    <ImageView
+        android:id="@+id/imgPopupMenuNextMeetingsList"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="@dimen/main_margin"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/main_margin"
+        android:contentDescription="@string/imgPopupMenu"
+        android:src="@drawable/ic_popup_black_24dp"
+        app:layout_constraintEnd_toEndOf="@+id/lblNameCompanyMeetingList"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblinitialMeeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/main_margin_meeting"
+        android:text="@string/initialMeeting_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/formStudent_textSize"
+        app:layout_constraintStart_toStartOf="@+id/lblDateMeetingList"
+        app:layout_constraintTop_toTopOf="@+id/lblTimeStartMeetingList" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

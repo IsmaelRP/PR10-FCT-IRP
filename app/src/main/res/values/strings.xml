@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">PR10-FCT-IRP</string>
+    <string name="nextMeetings">Next Meetings</string>
+    <string name="students">Students</string>
+    <string name="companies">Companies</string>
+    <string name="meetings">Meetings</string>
+    <string name="lblEmptyStudents_text">There aren\'t students yet</string>
+    <string name="tilName_hint">Student\'s name</string>
+    <string name="tilNameComp_hint">Company\'s name</string>
+    <string name="tilTel_hint">Student\'s phone</string>
+    <string name="tilCifComp_hint">Company\'s CIF</string>
+    <string name="tilEmail_hint">Email</string>
+    <string name="tilAddressComp_hint">Company\'s address</string>
+    <string name="tilGrade_hint">Grade</string>
+    <string name="tilCompany_hint">Company</string>
+    <string name="tilTutor_hint">Company\'s Contact</string>
+    <string name="tilTelTutor_hint">Company\'s Contact phone</string>
+    <string name="tilScheduleStudent_hint">Student\'s schedule</string>
+    <string name="saveStudentForm_text">Save</string>
+    <string name="student_inserted_successfully">Student inserted successfully</string>
+    <string name="student_updated_successfully">Student updated successfully</string>
+    <string name="student_error_inserting">Error inserting student</string>
+    <string name="student_error_updating">Error updating student</string>
+    <string name="tilTelCompany_hint">Company\'s phone</string>
+    <string name="tilEmailCompany_hint">Company\'s Email</string>
+    <string name="tilLogoCompany_hint">Company\'s logo</string>
+    <string name="imgLogoCompany_descr">Logo company</string>
+    <string name="company_inserted_successfully">Company inserted successfully</string>
+    <string name="company_updated_successfully">Company updated successfully</string>
+    <string name="imgPopupMenu">Options button</string>
+    <string name="item_popup_mnuDelete">Delete</string>
+    <string name="item_popup_mnuEdit">Edit</string>
+    <string name="lblEmptyCompanies_text">There aren\'t companies yet</string>
+    <string name="item_popup_mnuSelect">Select</string>
+    <string name="lblEmptyMeetings_text">There aren\'t meetings yet</string>
+    <string name="meeting_updated_successfully">Meeting updated successfully</string>
+    <string name="meeting_error_updating">Error updating meeting</string>
+    <string name="tilDate_hint">Meeting\'s Date</string>
+    <string name="tilTimeStart_hint">Meeting\'s start</string>
+    <string name="tilTimeEnd_hint">Meeting\'s end</string>
+    <string name="tilObservations_hint">Meeting\'s observations</string>
+    <string name="btnmeetinglist_text">Do initial visit</string>
+    <string name="lblEmptyNextMeetings_text">There aren\'t students to visit yet</string>
+    <string name="item_popup_mnuMeet">Meet</string>
+    <string name="item_popup_mnuInitial">Do initial meet</string>
+    <string name="mainDest">mainDest</string>
+    <string name="mainDestTitle">Main Page</string>
+    <string-array name="destEntries">
+        <item>Next Meetings</item>
+        <item>Students</item>
+        <item>Companies</item>
+        <item>Meetings</item>
+    </string-array>
+    <string-array name="destValues">
+        <item>next</item>
+        <item>stud</item>
+        <item>comp</item>
+        <item>meet</item>
+    </string-array>
+    <string name="destTitle">Select main page</string>
+    <string name="desDefault">next</string>
+    <string name="settingsTitle">Settings</string>
+    <string name="daysKey">daysKey</string>
+    <string name="daysTitle">Time between meetings</string>
+    <string name="lblStudent_name">Student\'s name:</string>
+    <string name="lblCompany_name">Company\'s name:</string>
+    <string name="lblDate_name">Date:</string>
+    <string name="lblTimeStart_name">Start of meeting:</string>
+    <string name="lblTimeEnd_name">End of meeting:</string>
+    <string name="main_imgUserPhoto">User\'s image</string>
+    <string name="main_lblUserName">User</string>
+    <string name="main_lblUserDescr">Created by Ismael Raqi Picardo</string>
+    <string name="main_lblUserEmail">Ismael98r@hotmail.com</string>
+    <string name="btnSelectCompany_text">Select Company</string>
+    <string name="categoryTitle">Main settings</string>
+    <string name="developerInfo">This app has been programmed in Android,\ndeveloped by Ismael Raqi Picardo,\nstudent of I.E.S. Saladillo\n\nContact: ismael98r@hotmail.com</string>
+    <string name="imgAndroid">Image of Android</string>
+    <string name="developer">developer</string>
+    <string name="company_error_inserting">Error inserting company</string>
+    <string name="company_error_updating">Error updating company</string>
+    <string name="categoryOthers">Other</string>
+    <string name="initialMeeting_text">You have to do an initial meeting!</string>
+    <string name="company_deleted_successfully">Company deleted successfully</string>
+    <string name="company_error_deleting">Error, you have to remove its students and its meetings first!</string>
+    <string name="meeting_deleted_successfully">Meeting deleted successfully</string>
+    <string name="meeting_error_deleting">Error deleting meeting</string>
+    <string name="student_deleted_successfully">Student deleted successfully</string>
+    <string name="student_error_deleting">Error, you have to remove its meetings first!</string>
+</resources>

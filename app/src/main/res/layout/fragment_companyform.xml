@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayoutFormCompanies"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarLayoutFormCompanies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarFormCompanies"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilNameCompanyForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin"
+                    android:hint="@string/tilNameComp_hint"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="15"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNameCompanyForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/black"
+                        android:maxLength="15"
+                        android:textSize="@dimen/formStudent_textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCifCompanyForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin"
+                    android:hint="@string/tilCifComp_hint"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="9"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilNameCompanyForm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtCifCompanyForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/black"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="9"
+                        android:textSize="@dimen/formStudent_textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAddressCompanyForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin"
+                    android:hint="@string/tilAddressComp_hint"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="30"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilCifCompanyForm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtAddressCompanyForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/formStudent_textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilTelCompanyForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin"
+                    android:hint="@string/tilTelCompany_hint"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="9"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilAddressCompanyForm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtTelCompanyForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="phone"
+                        android:textColor="@color/black"
+                        android:maxLength="9"
+                        android:textSize="@dimen/formStudent_textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmailCompanyForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin"
+                    android:hint="@string/tilEmailCompany_hint"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="30"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilTelCompanyForm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtEmailCompanyForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="30"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/formStudent_textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilTutorCompanyForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin"
+                    android:hint="@string/tilTutor_hint"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="30"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilEmailCompanyForm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtTutorCompanyForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/black"
+                        android:maxLength="30"
+                        android:textSize="@dimen/formStudent_textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilTelTutorCompanyForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin"
+                    android:hint="@string/tilTelTutor_hint"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="9"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilTutorCompanyForm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtTelTutorCompanyForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="phone"
+                        android:maxLength="9"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/formStudent_textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilLogoCompanyForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin"
+                    android:hint="@string/tilLogoCompany_hint"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="120"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilTelTutorCompanyForm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtLogoCompanyForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textUri"
+                        android:maxLength="120"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/formStudent_textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
+

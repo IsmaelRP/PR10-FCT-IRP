@@ -1,0 +1,325 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "e3783fa895b39d94254ede61f08076b1",
+    "entities": [
+      {
+        "tableName": "Student",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idStudent` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nameStudent` TEXT, `telStudent` INTEGER NOT NULL, `emailStudent` TEXT, `gradeStudent` TEXT, `companyStudent` INTEGER NOT NULL, `scheduleStudent` TEXT, `nameCompany` TEXT, FOREIGN KEY(`companyStudent`) REFERENCES `Company`(`idCompany`) ON UPDATE CASCADE ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "idStudent",
+            "columnName": "idStudent",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nameStudent",
+            "columnName": "nameStudent",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "telStudent",
+            "columnName": "telStudent",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "emailStudent",
+            "columnName": "emailStudent",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gradeStudent",
+            "columnName": "gradeStudent",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "companyStudent",
+            "columnName": "companyStudent",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scheduleStudent",
+            "columnName": "scheduleStudent",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nameCompany",
+            "columnName": "nameCompany",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idStudent"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Student_nameStudent",
+            "unique": true,
+            "columnNames": [
+              "nameStudent"
+            ],
+            "createSql": "CREATE UNIQUE INDEX `index_Student_nameStudent` ON `${TABLE_NAME}` (`nameStudent`)"
+          },
+          {
+            "name": "index_Student_idStudent",
+            "unique": false,
+            "columnNames": [
+              "idStudent"
+            ],
+            "createSql": "CREATE  INDEX `index_Student_idStudent` ON `${TABLE_NAME}` (`idStudent`)"
+          },
+          {
+            "name": "index_Student_companyStudent",
+            "unique": false,
+            "columnNames": [
+              "companyStudent"
+            ],
+            "createSql": "CREATE  INDEX `index_Student_companyStudent` ON `${TABLE_NAME}` (`companyStudent`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Company",
+            "onDelete": "RESTRICT",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "companyStudent"
+            ],
+            "referencedColumns": [
+              "idCompany"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Company",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCompany` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nameCompany` TEXT, `cif` TEXT, `addressCompany` TEXT, `telCompany` INTEGER NOT NULL, `emailCompany` TEXT, `logoCompany` TEXT, `nameTutor` TEXT, `telTutor` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idCompany",
+            "columnName": "idCompany",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nameCompany",
+            "columnName": "nameCompany",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cif",
+            "columnName": "cif",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "addressCompany",
+            "columnName": "addressCompany",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "telCompany",
+            "columnName": "telCompany",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "emailCompany",
+            "columnName": "emailCompany",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "logoCompany",
+            "columnName": "logoCompany",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nameTutor",
+            "columnName": "nameTutor",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "telTutor",
+            "columnName": "telTutor",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idCompany"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Company_nameCompany",
+            "unique": true,
+            "columnNames": [
+              "nameCompany"
+            ],
+            "createSql": "CREATE UNIQUE INDEX `index_Company_nameCompany` ON `${TABLE_NAME}` (`nameCompany`)"
+          },
+          {
+            "name": "index_Company_idCompany",
+            "unique": false,
+            "columnNames": [
+              "idCompany"
+            ],
+            "createSql": "CREATE  INDEX `index_Company_idCompany` ON `${TABLE_NAME}` (`idCompany`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Meeting",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idMeeting` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `dateMeeting` TEXT, `timeStart` TEXT, `timeEnd` TEXT, `observations` TEXT, `companyMeeting` INTEGER NOT NULL, `studentMeeting` INTEGER NOT NULL, `studentNameMeeting` TEXT, `companyNameMeeting` TEXT, FOREIGN KEY(`studentMeeting`) REFERENCES `Student`(`idStudent`) ON UPDATE CASCADE ON DELETE RESTRICT , FOREIGN KEY(`companyMeeting`) REFERENCES `Company`(`idCompany`) ON UPDATE CASCADE ON DELETE RESTRICT , FOREIGN KEY(`companyNameMeeting`) REFERENCES `Company`(`nameCompany`) ON UPDATE CASCADE ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "idMeeting",
+            "columnName": "idMeeting",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateMeeting",
+            "columnName": "dateMeeting",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "timeStart",
+            "columnName": "timeStart",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "timeEnd",
+            "columnName": "timeEnd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "observations",
+            "columnName": "observations",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "companyMeeting",
+            "columnName": "companyMeeting",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "studentMeeting",
+            "columnName": "studentMeeting",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "studentNameMeeting",
+            "columnName": "studentNameMeeting",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "companyNameMeeting",
+            "columnName": "companyNameMeeting",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idMeeting"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Meeting_idMeeting",
+            "unique": false,
+            "columnNames": [
+              "idMeeting"
+            ],
+            "createSql": "CREATE  INDEX `index_Meeting_idMeeting` ON `${TABLE_NAME}` (`idMeeting`)"
+          },
+          {
+            "name": "index_Meeting_companyMeeting",
+            "unique": false,
+            "columnNames": [
+              "companyMeeting"
+            ],
+            "createSql": "CREATE  INDEX `index_Meeting_companyMeeting` ON `${TABLE_NAME}` (`companyMeeting`)"
+          },
+          {
+            "name": "index_Meeting_studentMeeting",
+            "unique": false,
+            "columnNames": [
+              "studentMeeting"
+            ],
+            "createSql": "CREATE  INDEX `index_Meeting_studentMeeting` ON `${TABLE_NAME}` (`studentMeeting`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Student",
+            "onDelete": "RESTRICT",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "studentMeeting"
+            ],
+            "referencedColumns": [
+              "idStudent"
+            ]
+          },
+          {
+            "table": "Company",
+            "onDelete": "RESTRICT",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "companyMeeting"
+            ],
+            "referencedColumns": [
+              "idCompany"
+            ]
+          },
+          {
+            "table": "Company",
+            "onDelete": "RESTRICT",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "companyNameMeeting"
+            ],
+            "referencedColumns": [
+              "nameCompany"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"e3783fa895b39d94254ede61f08076b1\")"
+    ]
+  }
+}

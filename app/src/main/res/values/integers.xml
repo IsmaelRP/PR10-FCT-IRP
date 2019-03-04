@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="minDays">1</integer>
+    <integer name="daysIncrement">1</integer>
+    <integer name="daysDefault">15</integer>
+    <integer name="maxDays">30</integer>
+</resources>

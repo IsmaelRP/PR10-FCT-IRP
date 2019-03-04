@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayoutFormMeetings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarLayoutFormMeetings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarFormMeetings"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lblNameStudentMeetingForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin_meeting"
+                    android:hint="@string/tilName_hint"
+                    android:maxLength="15"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/formStudent_textSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lblNameStudentInfo"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lblNameCompanyMeetingForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin_meeting"
+                    android:hint="@string/tilNameComp_hint"
+                    android:textSize="@dimen/formStudent_textSize"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lblNameCompanyInfo"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNameStudentMeetingForm" />
+
+
+                <TextView
+                    android:id="@+id/lblDateMeetingForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin_meeting"
+                    android:hint="@string/tilDate_hint"
+                    android:textSize="@dimen/formStudent_textSize"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lblMeetingDateInfo"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNameCompanyMeetingForm" />
+
+
+                <TextView
+                    android:id="@+id/lblTimeStartMeetingForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin_meeting"
+                    android:hint="@string/tilTimeStart_hint"
+                    android:textSize="@dimen/formStudent_textSize"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lblTimeStartInfo"
+                    app:layout_constraintTop_toBottomOf="@+id/lblDateMeetingForm" />
+
+
+                <TextView
+                    android:id="@+id/lblTimeEndMeetingForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin_meeting"
+                    android:hint="@string/tilTimeEnd_hint"
+                    android:textSize="@dimen/formStudent_textSize"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lblTimeEndInfo"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTimeStartMeetingForm" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilObservationsMeetingForm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin"
+                    android:layout_marginBottom="@dimen/margin_especial_meeting"
+                    android:hint="@string/tilObservations_hint"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="30"
+                    android:textSize="@dimen/formStudent_textSize"
+                    android:textColorHint="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTimeEndMeetingForm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtObservationsMeetingForm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:maxLength="30"
+                        android:textSize="@dimen/formStudent_textSize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/lblNameStudentInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin_meeting"
+                    android:text="@string/lblStudent_name"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/lblNameStudentMeetingForm"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lblNameCompanyInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin_meeting"
+                    android:text="@string/lblCompany_name"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/lblNameCompanyMeetingForm"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNameStudentInfo" />
+
+                <TextView
+                    android:id="@+id/lblMeetingDateInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin_meeting"
+                    android:text="@string/lblDate_name"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/lblDateMeetingForm"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblNameCompanyInfo" />
+
+                <TextView
+                    android:id="@+id/lblTimeStartInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/main_margin_meeting"
+                    android:text="@string/lblTimeStart_name"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/lblTimeStartMeetingForm"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblMeetingDateInfo" />
+
+                <TextView
+                    android:id="@+id/lblTimeEndInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lblTimeEnd_name"
+                    android:layout_margin="@dimen/main_margin_meeting"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/lblTimeEndMeetingForm"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTimeStartInfo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/categoryTitle">
+
+        <androidx.preference.ListPreference
+            android:defaultValue="@string/desDefault"
+            android:dialogTitle="@string/destTitle"
+            android:entries="@array/destEntries"
+            android:entryValues="@array/destValues"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:key="@string/mainDest"
+            android:title="@string/mainDestTitle"
+            app:useSimpleSummaryProvider="true" />
+
+        <androidx.preference.SeekBarPreference
+            android:defaultValue="@integer/daysDefault"
+            android:icon="@drawable/ic_hourglass_black_24dp"
+            android:key="@string/daysKey"
+            android:max="@integer/maxDays"
+            android:title="@string/daysTitle"
+            app:adjustable="true"
+            app:min="@integer/minDays"
+            app:seekBarIncrement="@integer/daysIncrement"
+            app:showSeekBarValue="true" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/categoryOthers">
+
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_android_black_24dp"
+            android:persistent="false"
+            android:title="Contact">
+            <intent
+                android:targetClass="com.practica.ismael.pr10_fct_irp.ui.activity.DeveloperFragment"
+                android:targetPackage="com.practica.ismael.pr10_fct_irp" />
+        </androidx.preference.Preference>
+    </androidx.preference.PreferenceCategory>
+</androidx.preference.PreferenceScreen>

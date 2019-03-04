@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/item_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="@dimen/list_minHeight"
+        android:paddingBottom="7dp">
+
+        <TextView
+            android:id="@+id/lblNameCompanyListSelection"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingStart="@dimen/list_paddingLeft"
+            android:paddingTop="@dimen/list_paddingRight"
+            android:paddingEnd="@dimen/list_paddingRight"
+            android:textColor="@color/black"
+            android:textSize="@dimen/formStudent_textSize"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/lblAddressCompanyListSelection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgLogoCompanyListSelection"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name" />
+
+        <TextView
+            android:id="@+id/lblAddressCompanyListSelection"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@+id/lblNameCompanyListSelection"
+            android:paddingStart="@dimen/list_paddingLeft"
+            android:paddingTop="@dimen/list_paddingRight"
+            android:paddingEnd="@dimen/list_paddingRight"
+            android:textColor="@color/black"
+            android:textSize="@dimen/formStudent_textSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgLogoCompanyListSelection"
+            app:layout_constraintTop_toBottomOf="@+id/lblNameCompanyListSelection"
+            tools:text="Address" />
+
+        <ImageView
+            android:id="@+id/imgLogoCompanyListSelection"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/main_margin_logo"
+            android:contentDescription="@string/imgLogoCompany_descr"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_empty_logo_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Logo" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

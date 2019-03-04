@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nextMeetingsFragment"
+            android:icon="@drawable/ic_nextmeetings_white_24dp"
+            android:title="@string/nextMeetings"
+            android:menuCategory="secondary"/>
+        <item
+            android:id="@+id/studentsFragment"
+            android:icon="@drawable/ic_students_white_24dp"
+            android:title="@string/students"
+            android:menuCategory="secondary"/>
+        <item
+            android:id="@+id/companiesFragment"
+            android:icon="@drawable/ic_companies_white_24dp"
+            android:title="@string/companies"
+            android:menuCategory="secondary"/>
+        <item
+            android:id="@+id/meetingsFragment"
+            android:icon="@drawable/ic_meetings_white_24dp"
+            android:title="@string/meetings"
+            android:menuCategory="secondary"/>
+    </group>
+
+</menu>

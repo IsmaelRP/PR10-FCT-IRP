@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/item_border"
+    android:clickable="true"
+    android:focusable="true"
+    android:minHeight="@dimen/list_minHeight"
+    android:paddingBottom="7dp">
+
+    <TextView
+        android:id="@+id/lblNameStudentList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/list_paddingLeft"
+        android:paddingTop="@dimen/list_paddingRight"
+        android:paddingEnd="@dimen/list_paddingRight"
+        android:textSize="@dimen/formStudent_textSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/lblGradeStudentList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        tools:text="Nombre" />
+
+    <TextView
+        android:id="@+id/lblGradeStudentList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblNameStudentList"
+        android:paddingStart="@dimen/list_paddingLeft"
+        android:paddingTop="@dimen/list_paddingRight"
+        android:paddingEnd="@dimen/list_paddingRight"
+        android:textSize="@dimen/formStudent_textSize"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/lblCompanyStudentList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblNameStudentList"
+        android:textColor="@color/black"
+        tools:text="Curso" />
+
+    <TextView
+        android:id="@+id/lblCompanyStudentList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblGradeStudentList"
+        android:paddingStart="@dimen/list_paddingLeft"
+        android:paddingTop="@dimen/list_paddingRight"
+        android:paddingEnd="@dimen/list_paddingRight"
+        android:textSize="@dimen/formStudent_textSize"
+        app:layout_constraintBottom_toTopOf="@+id/lblScheduleStudentList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblGradeStudentList"
+        android:textColor="@color/black"
+        tools:text="Empresa" />
+
+    <TextView
+        android:id="@+id/lblScheduleStudentList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblCompanyStudentList"
+        android:paddingStart="@dimen/list_paddingLeft"
+        android:paddingTop="@dimen/list_paddingRight"
+        android:paddingEnd="@dimen/list_paddingRight"
+        android:textSize="@dimen/formStudent_textSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblCompanyStudentList"
+        android:textColor="@color/black"
+        tools:text="Horario" />
+
+    <ImageView
+        android:id="@+id/imgPopupMenuStudentList"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="@dimen/main_margin"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/main_margin"
+        android:contentDescription="@string/imgPopupMenu"
+        android:src="@drawable/ic_popup_black_24dp"
+        app:layout_constraintEnd_toEndOf="@+id/lblNameStudentList"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

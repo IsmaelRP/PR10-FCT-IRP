@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nextMeetingsFragment"
+        android:icon="@drawable/ic_nextmeetings_white_24dp"
+        android:title="@string/nextMeetings"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/studentsFragment"
+        android:icon="@drawable/ic_students_white_24dp"
+        android:title="@string/students"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/companiesFragment"
+        android:icon="@drawable/ic_companies_white_24dp"
+        android:title="@string/companies"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/meetingsFragment"
+        android:icon="@drawable/ic_meetings_white_24dp"
+        android:title="@string/meetings"
+        app:showAsAction="ifRoom" />
+</menu>
