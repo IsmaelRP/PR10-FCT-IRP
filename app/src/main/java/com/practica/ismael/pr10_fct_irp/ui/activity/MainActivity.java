@@ -4,6 +4,7 @@ package com.practica.ismael.pr10_fct_irp.ui.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements ToolbarConf {
     private AppBarConfiguration appBarConfiguration;
     private SharedPreferences preferences;
     private MainViewModel mainViewModel;
+    private boolean flag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,16 +46,21 @@ public class MainActivity extends AppCompatActivity implements ToolbarConf {
                 (controller, destination, arguments) -> setTitle(destination.getLabel()));
         if (drawerLayout != null) {
             // Navigation drawer mode.
-            setupNavigationDrawer();
+            appBarConfiguration = new AppBarConfiguration.Builder(R.id.companiesFragment, R.id.studentsFragment,
+                    R.id.meetingsFragment, R.id.nextMeetingsFragment).setDrawerLayout(drawerLayout).build();
         } else {
             // BottomNavigationView mode
-            setupBottomNavigationView();
+            appBarConfiguration = new AppBarConfiguration.Builder(R.id.companiesFragment, R.id.studentsFragment,
+                    R.id.meetingsFragment, R.id.nextMeetingsFragment).build();
         }
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         mainViewModel.setHomePage(preferences.getString(getString(R.string.mainDest), getString(R.string.desDefault)));
         mainViewModel.setVisitDays(preferences.getInt(getString(R.string.daysKey), 15));
-        setupNavigationGraph();
+        if (flag) {
+            flag = false;
+            setupNavigationGraph();
+        }
     }
 
     private void setupNavigationGraph() {
@@ -91,15 +98,13 @@ public class MainActivity extends AppCompatActivity implements ToolbarConf {
         bottomNavigationView = ActivityCompat.requireViewById(this,
                 R.id.bottom_navigation);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
-        appBarConfiguration = new AppBarConfiguration.Builder(R.id.companiesFragment, R.id.studentsFragment,
-                R.id.meetingsFragment, R.id.nextMeetingsFragment).build();
+
     }
 
     private void setupNavigationDrawer() {
         NavigationView navigationView = ActivityCompat.requireViewById(this, R.id.navigation_view);
         NavigationUI.setupWithNavController(navigationView, navController);
-        appBarConfiguration = new AppBarConfiguration.Builder(R.id.companiesFragment, R.id.studentsFragment,
-                R.id.meetingsFragment, R.id.nextMeetingsFragment).setDrawerLayout(drawerLayout).build();
+
     }
 
     @Override
@@ -109,16 +114,32 @@ public class MainActivity extends AppCompatActivity implements ToolbarConf {
     }
 
     @Override
+    public void onBackPressed() {
+        if (drawerLayout != null && drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
-
     @Override
     public void onConfigure(Toolbar toolbar) {
         setSupportActionBar(toolbar);
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
+
+        if (drawerLayout != null) {
+            // Navigation drawer mode.
+            setupNavigationDrawer();
+        } else {
+            // BottomNavigationView mode
+            setupBottomNavigationView();
+        }
     }
 
 
