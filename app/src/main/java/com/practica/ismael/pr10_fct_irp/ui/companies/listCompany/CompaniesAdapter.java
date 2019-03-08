@@ -38,12 +38,15 @@ public class CompaniesAdapter extends ListAdapter<Company, CompaniesAdapter.View
         this.vm = vm;
     }
 
+
+
     @NonNull
     @Override
     public CompaniesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new CompaniesAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).
                 inflate(R.layout.fragment_list_companies, parent, false), vm);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull CompaniesAdapter.ViewHolder holder, int position) {

@@ -3,12 +3,13 @@ package com.practica.ismael.pr10_fct_irp.data.local.model;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import static androidx.room.ForeignKey.CASCADE;
 import static androidx.room.ForeignKey.RESTRICT;
 
-@Entity(foreignKeys = {@ForeignKey(entity = Student.class,
+@Entity(indices = @Index(value = {"companyNameMeeting"}, unique = true), foreignKeys = {@ForeignKey(entity = Student.class,
         parentColumns = "idStudent",
         childColumns = "studentMeeting",
         onUpdate = CASCADE,

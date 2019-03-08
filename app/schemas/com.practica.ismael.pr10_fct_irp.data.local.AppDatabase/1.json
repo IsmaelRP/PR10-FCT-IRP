@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "e3783fa895b39d94254ede61f08076b1",
+    "identityHash": "63987ab066a4c4b5a8283f404fed2def",
     "entities": [
       {
         "tableName": "Student",
@@ -255,6 +255,14 @@
         },
         "indices": [
           {
+            "name": "index_Meeting_companyNameMeeting",
+            "unique": true,
+            "columnNames": [
+              "companyNameMeeting"
+            ],
+            "createSql": "CREATE UNIQUE INDEX `index_Meeting_companyNameMeeting` ON `${TABLE_NAME}` (`companyNameMeeting`)"
+          },
+          {
             "name": "index_Meeting_idMeeting",
             "unique": false,
             "columnNames": [
@@ -319,7 +327,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"e3783fa895b39d94254ede61f08076b1\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"63987ab066a4c4b5a8283f404fed2def\")"
     ]
   }
 }
